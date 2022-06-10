@@ -23,13 +23,13 @@ resource "digitalocean_kubernetes_cluster" "k8s-iniciativa" {
   }
 }
 
-/* resource "digitalocean_kubernetes_node_pool" "node_premium" {
+resource "digitalocean_kubernetes_node_pool" "node_premium" {
   cluster_id = digitalocean_kubernetes_cluster.k8s-iniciativa.id
 
   name       = "premium"
   size       = "s-2vcpu-4gb"
   node_count = 2
-} */
+}
 
 variable "do_token" {}
 variable "k8s_name" {}
