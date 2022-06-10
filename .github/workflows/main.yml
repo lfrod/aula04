@@ -37,13 +37,13 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       
-      - name: Kubernetes Set Context
+      - name: Definindo o Kube config
         uses: Azure/k8s-set-context@v2
         with:
           method: kubeconfig
           kubeconfig: ${{secrets.K8S_CONFIG}}
       
-      - name: Deploy to Kubernetes cluster
+      - name: Efetuando o deploy no kubernetes
         uses: Azure/k8s-deploy@v3.1
         with:
           images: lfrodrigues17/kube-news:${{github.run_number}}
